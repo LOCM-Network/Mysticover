@@ -1,0 +1,25 @@
+dia_log_1:
+  npc: steve
+  spawn_settings:
+    world: world
+    x: 0
+    y: 0
+    z: 0
+  start:
+    text: Hello {player}, I'm {npc_name}, I need your help.
+    buttons:
+      1:
+        text: What do you need?
+        stories:
+          - There are monsters attacking our village, please help us.
+          - I need you to find a golden sword for me.
+        go: MAIN:quest_1
+  end:
+    text: Thanks for finding the golden sword for me.
+    buttons:
+      1:
+        text: You're welcome
+        stories:
+          - Thanks for finding the golden sword for me.
+          - Oh no, Alex lost his dog, can you help him find it?
+        go: SUB:sub_1

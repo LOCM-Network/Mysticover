@@ -1,0 +1,35 @@
+dia_log_2:
+  npc: alex
+  spawn_location:
+    after_quest: 1
+    world: world
+    x: 0
+    y: 0
+    z: 0
+  start:
+    text: Hello {player}, I'm {npc_name}, I lost my dog, can you help me find it?
+    buttons:
+      1:
+        text: Sure, I will help you
+        stories:
+          - Thank you, I will wait for you here.
+        handle:
+          give:
+            items:
+              "bone:1"
+        notice: You received 1 bone, you can use it to tame the dog.
+      go: SUB:sub_1
+  end:
+    text: Thanks for finding my dog for me.
+    buttons:
+      1:
+        text: You're welcome
+        stories:
+          - Thanks for finding my dog for me.
+          - Here is your reward.
+        handle:
+          give:
+            items:
+              "gold:1"
+        notice: You received 1 gold.
+        go: END

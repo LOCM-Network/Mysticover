@@ -1,0 +1,14 @@
+title: Alex lost a dog
+description: Help Alex find his dog
+target:
+  find:
+    type: entity
+    target: wolf
+    missing_message: You need to find {target}
+    done_message: Find it, now tame it with the bone.
+  tame:
+    type: entity
+    target: wolf
+    missing_message: You need to tame {target}
+    done_message: Now return it to Alex.
+go: SUB:sub_2

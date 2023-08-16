@@ -1,0 +1,30 @@
+title: Help villagers
+description: Help the villagers repel the monsters
+
+timelines:
+  move:
+    requirements:
+      warp: Village
+      notice: You need to go to the village now.
+  find:
+    requirements:
+      type: npc
+      target: alex
+      notice: You found Alex, talk to him to receive the quest.
+  spawn:
+    requirements:
+      entities:
+        - "zombie:2"
+        - "skeleton:1"
+        - "spider:1"
+        - "creeper:1"
+      spawn-area:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        radius: 10
+      notice: Monsters are attacking the village, you need to kill them.
+  end:
+    notice: You have completed the quest, you can go back to the village to receive the reward.
+    go: END
