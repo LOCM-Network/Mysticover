@@ -1,0 +1,20 @@
+storylines:
+  storyline_1:
+    name: Storyline 1
+    description: This is storyline 1
+    # The name of the world where the storyline is located
+    arc: arc_1
+    # Timeline's number of quests
+    quests_length: 20
+    # Quest list
+    # "END" means the end of the storyline
+    onStart:
+      quests:
+        - quest1
+        - quest2
+    onEnd:
+      notice: You have completed storyline 1
+      rewards:
+        give:
+          items:
+            "gold:1"
