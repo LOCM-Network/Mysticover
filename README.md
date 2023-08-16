@@ -21,6 +21,5 @@ Arc Name:
                             Requirements of Sub quest 1
                         Sub quest 2
                             Requirements of Sub quest 2
-    Stort line 2:
        
 ```

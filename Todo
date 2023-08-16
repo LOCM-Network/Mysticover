@@ -1,0 +1,17 @@
+Struct of Arc:
+Arc:
+    Story line:
+        Time line:
+            scenario_1:
+                requirements of scenario_1
+            scenario_2:
+                Quests requirements of scenario_2
+                    Quest 1
+                        Requirements of Quest 1
+                    Quest 2
+                        Requirements of Quest 2
+                    Quest 3
+                        Sub quest 1
+                            Requirements of Sub quest 1
+                        Sub quest 2
+                            Requirements of Sub quest 2
