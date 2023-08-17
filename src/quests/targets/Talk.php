@@ -4,7 +4,20 @@ declare(strict_types=1);
 
 namespace phuongaz\locm\mysticover\quests\targets;
 
-use phuongaz\locm\mysticover\quests\BaseQuest;
+class Talk extends Target {
 
-class Talk extends BaseQuest {
+    /**
+     * @param array $requirement
+     * ["npcName", "npcName"]
+     * @param array $value
+     * ["npcName", "npcName"]
+     * @return bool
+     */
+    public static function compare(array $requirement, array $value): bool {
+        sort($requirement);
+        sort($value);
+
+        return $requirement === $value;
+    }
+
 }

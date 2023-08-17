@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace phuongaz\locm\mysticover\database;
 
 use muqsit\invmenu\session\PlayerSession;
+use phuongaz\locm\mysticover\database\player\Process;
 use pocketmine\player\Player;
 use SplObjectStorage;
 
@@ -16,15 +17,15 @@ final class Session {
         self::$players = new SplObjectStorage();
     }
 
-    public static function addPlayer(Player $player, PlayerSession $playerSession): void {
-        self::$players[$player] = $playerSession;
+    public static function addPlayer(Player $player, Process $process): void {
+        self::$players[$player] = $process;
     }
 
     public static function removePlayer(Player $player): void {
         unset(self::$players[$player]);
     }
 
-    public static function getPlayerSession(Player $player): ?PlayerSession {
+    public static function getPlayerSession(Player $player): ?Process {
         return self::$players[$player] ?? null;
     }
 

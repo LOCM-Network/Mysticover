@@ -1,6 +1,6 @@
 dia_log_2:
   npc: alex
-  spawn_location:
+  spawn_settings:
     after_quest: 1
     world: world
     x: 0
@@ -17,8 +17,8 @@ dia_log_2:
           give:
             items:
               "bone:1"
-        notice: You received 1 bone, you can use it to tame the dog.
-      go: SUB:sub_1
+          notice: You received 1 bone, you can use it to tame the dog.
+        go: SUB:sub_1
   end:
     text: Thanks for finding my dog for me.
     buttons:
@@ -31,5 +31,5 @@ dia_log_2:
           give:
             items:
               "gold:1"
-        notice: You received 1 gold.
+          notice: You received 1 gold.
         go: END

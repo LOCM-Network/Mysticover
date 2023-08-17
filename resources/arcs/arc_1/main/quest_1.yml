@@ -2,19 +2,18 @@ title: Find golden sword
 description: Description of the quest
 target:
   find:
-    type: item
-    items:
-      - "gold:2"
-      - "stick:1"
+    values:
+      - "item:gold:2"
+      - "item:stick:1"
     missing_message: You need to find {items}
-    done_message: Thanks for finding {items}, after that, you need to craft a golden sword.
+    complete_message: Thanks for finding {items}, after that, you need to craft a golden sword.
   craft:
-    items:
+    values:
       - "gold_sword:1"
     missing_message: You need to craft a golden sword
-    done_message: Thanks for crafting {items}, after that.
+    complete_message: Thanks for crafting {items}, after that.
 
 rewards:
     items: []
     commands: []
-go: sub:sub_1
+go: arc_1:SUB:sub_1

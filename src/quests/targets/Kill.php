@@ -4,7 +4,24 @@ declare(strict_types=1);
 
 namespace phuongaz\locm\mysticover\quests\targets;
 
-use phuongaz\locm\mysticover\quests\BaseQuest;
+class Kill extends Target {
 
-class Kill extends BaseQuest {
+    public static function compare(array $requirement, array $value): bool {
+        foreach ($requirement as $requirementItem) {
+            [$requiredEntity, $requiredAmount] = explode(':', $requirementItem);
+
+            if (!array_key_exists($requiredEntity, $value)) {
+                return false;
+            }
+
+            $actualAmount = $value[$requiredEntity];
+
+            if ($actualAmount < $requiredAmount) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }

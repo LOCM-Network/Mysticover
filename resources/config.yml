@@ -19,6 +19,10 @@ timeline:
           items:
             "gold:1"
 
+language: en
+message-format: "&7[&6Mysticover&7] &r%message%"
+
+first_arc: arc_1
 
 database:
   # The database type. "sqlite" and "mysql" are supported.

@@ -2,12 +2,11 @@ title: Return the dog to alex
 description: Return the dog to alex
 target:
   give:
-    type: entity
-    target: wolf
-    to: alex
+    values:
+      - "entity:alex:wolf:1"
     missing_message: You need to give {target} to {to}
-    done_message: Thanks for returning the dog for me, here is your reward.
+    complete_message: Thanks for returning the dog for me, here is your reward.
 rewards:
   items: []
   commands: []
-go: MAIN:quest_2
+go: arc_1:MAIN:quest_2

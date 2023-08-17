@@ -20,7 +20,9 @@ use phuongaz\locm\mysticover\quests\targets\ShearSheep;
 use phuongaz\locm\mysticover\quests\targets\SmeltItem;
 use phuongaz\locm\mysticover\quests\targets\Talk;
 use phuongaz\locm\mysticover\quests\targets\TameAnimal;
+use phuongaz\locm\mysticover\quests\targets\Target;
 use phuongaz\locm\mysticover\quests\targets\Travel;
+use phuongaz\locm\mysticover\utils\GlobalEnum;
 
 enum Type {
 
@@ -41,6 +43,29 @@ enum Type {
     case FIND;
     case GIVE;
     case TALK;
+
+    public function compare(array $requirement, array $value) :bool {
+        return match ($this) {
+            self::KILL => Kill::compare($requirement, $value),
+            self::BREAK => BreakBlock::compare($requirement, $value),
+            self::PLACE => PlaceBlock::compare($requirement, $value),
+            self::CRAFT => CraftItem::compare($requirement, $value),
+            self::SMELT => SmeltItem::compare($requirement, $value),
+            self::BREW => BrewPotion::compare($requirement, $value),
+            self::FISH => Fish::compare($requirement, $value),
+            self::ENCHANT => EnchantItem::compare($requirement, $value),
+            self::TAME => TameAnimal::compare($requirement, $value),
+            self::SHEAR => ShearSheep::compare($requirement, $value),
+            self::MILK => MilkCow::compare($requirement, $value),
+            self::EAT => EatFood::compare($requirement, $value),
+            self::DRINK => DrinkPotion::compare($requirement, $value),
+            self::TRAVEL => Travel::compare($requirement, $value),
+            self::FIND => Find::compare($requirement, $value),
+            self::GIVE => Give::compare($requirement, $value),
+            self::TALK => Talk::compare($requirement, $value),
+            default => false,
+        };
+    }
 
     public function toString() :string {
         return match ($this) {
@@ -87,7 +112,7 @@ enum Type {
         };
     }
 
-    public static function make(Type $type, string $name, string $description, array $targets, array $rewards, string $go) :BaseQuest {
+    public static function make(Type $type, string $name, string $description, array $targets, array $rewards, GlobalEnum $go) :Target {
         return match ($type) {
             self::KILL => new Kill($name, $description, $targets, $rewards, $go),
             self::BREW => new BrewPotion($name, $description, $targets, $rewards, $go),
